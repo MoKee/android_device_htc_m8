@@ -30,7 +30,6 @@ $(call inherit-product-if-exists, frameworks/native/build/phone-xxhdpi-2048-hwui
 
 # Audio configuration
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/audio/audio_effects.conf:system/etc/audio_effects.conf \
     $(LOCAL_PATH)/audio/audio_policy.conf:system/etc/audio_policy.conf \
     $(LOCAL_PATH)/audio/mixer_paths.xml:system/etc/mixer_paths.xml \
     $(LOCAL_PATH)/audio/soundimage/srsfx_trumedia_ext.cfg:system/etc/soundimage/srsfx_trumedia_ext.cfg \
@@ -97,7 +96,8 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.nfc.hce.xml:system/etc/permissions/android.hardware.nfc.hce.xml \
     frameworks/native/data/etc/com.nxp.mifare.xml:system/etc/permissions/com.nxp.mifare.xml \
     frameworks/native/data/etc/android.hardware.bluetooth_le.xml:system/etc/permissions/android.hardware.bluetooth_le.xml \
-    frameworks/native/data/etc/android.hardware.wifi.direct.xml:system/etc/permissions/android.hardware.wifi.direct.xml
+    frameworks/native/data/etc/android.hardware.wifi.direct.xml:system/etc/permissions/android.hardware.wifi.direct.xml \
+    device/htc/m8/configs/com.htc.software.market.xml:system/etc/permissions/com.htc.software.market.xml
 
 # Audio
 PRODUCT_PACKAGES += \
@@ -178,10 +178,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     qrngd
 
-# Touchscreen
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.input.noresample=1
-
 # USB
 PRODUCT_PACKAGES += \
     com.android.future.usb.accessory
@@ -229,13 +225,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/idc/projector_input.idc:system/usr/idc/projector_input.idc \
     $(LOCAL_PATH)/idc/synaptics-rmi-touchscreen.idc:system/usr/idc/synaptics-rmi-touchscreen.idc
 
-# Recovery
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.cwm.enable_key_repeat=true \
-    ro.cwm.repeatable_keys=114,115 \
-    ro.cwm.forbid_format=/boot,/devlog,/fataldevlog,/reserve,/firmware/radio,/firmware/adsp,/firmware/wcnss,/custdata \
-    ro.cwm.forbid_mount=/boot,/devlog,/fataldevlog,/reserve,/firmware/radio,/firmware/adsp,/firmware/wcnss,/custdata
-
 # Misc Packages
 PRODUCT_PACKAGES += \
     Torch
@@ -243,58 +232,3 @@ PRODUCT_PACKAGES += \
 # Variant linking script
 PRODUCT_PACKAGES += \
     makelinks.sh
-
-PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
-    persist.sys.usb.config=mtp
-
-# Common build properties
-PRODUCT_PROPERTY_OVERRIDES += \
-    debug.nfc.fw_download=true \
-    debug.nfc.fw_boot_download=false \
-    com.qc.hardware=true \
-    debug.composition.type=dyn \
-    debug.egl.hw=1 \
-    debug.mdpcomp.logs=0 \
-    debug.sf.hw=1 \
-    dev.pm.dyn_samplingrate=1 \
-    lpa.decode=true \
-    persist.hwc.mdpcomp.enable=true \
-    persist.thermal.monitor=true \
-    ro.sf.lcd_density=480 \
-    ro.telephony.call_ring.multiple=0 \
-    ro.use_data_netmgrd=true \
-    wifi.interface=wlan0 \
-    ro.vendor.extension_library=/vendor/lib/libqc-opt.so \
-    rild.libpath=/vendor/lib/libril-qc-qmi-1.so \
-    ro.baseband.arch=msm \
-    persist.radio.jbims=1 \
-    persist.rild.nitz_plmn="" \
-    persist.rild.nitz_long_ons_0="" \
-    persist.rild.nitz_long_ons_1="" \
-    persist.rild.nitz_long_ons_2="" \
-    persist.rild.nitz_long_ons_3="" \
-    persist.rild.nitz_short_ons_0="" \
-    persist.rild.nitz_short_ons_1="" \
-    persist.rild.nitz_short_ons_2="" \
-    persist.rild.nitz_short_ons_3="" \
-    ril.subscription.types=NV,RUIM \
-    DEVICE_PROVISIONED=1 \
-    ro.use_data_netmgrd=true \
-    persist.data.netmgrd.qos.enable=true \
-    ro.data.large_tcp_window_size=true \
-    ro.ril.hsdpa.category=14 \
-    ro.ril.hsupa.category=6 \
-    ro.ril.hsxpa=4 \
-    ro.ril.disable.cpc=1 \
-    ro.ril.def.agps.mode=1 \
-    persist.gps.qc_nlp_in_use=0 \
-    ro.gps.agps_provider=1 \
-    ro.qc.sdk.izat.premium_enabled=0 \
-    ro.qc.sdk.izat.service_mask=0x0 \
-    tunnel.audio.encode=true \
-    ro.qc.sdk.audio.fluencetype=fluence \
-    persist.audio.fluence.voicecall=true \
-    persist.audio.fluence.speaker=true \
-    audio.offload.buffer.size.kb=32 \
-    audio.offload.gapless.enabled=false \
-    ro.opengles.version=196608
