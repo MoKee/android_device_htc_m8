@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2012 The CyanogenMod Project
+ * Copyright (C) 2012 The MoKee OpenSource Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -319,6 +319,6 @@ struct hw_module_t HAL_MODULE_INFO_SYM = {
   .version_minor = 0,
   .id = LIGHTS_HARDWARE_MODULE_ID,
   .name = "Lights module",
-  .author = "The CyanogenMod Project",
+  .author = "The MoKee OpenSource Project",
   .methods = &lights_module_methods,
 };
