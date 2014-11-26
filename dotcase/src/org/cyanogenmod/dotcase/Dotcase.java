@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2014 The MoKee OpenSource Project
+ * Copyright (c) 2014 The CyanogenMod Project
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
