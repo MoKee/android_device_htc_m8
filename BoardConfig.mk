@@ -53,7 +53,7 @@ TARGET_USE_QCOM_BIONIC_OPTIMIZATION := true
 COMMON_GLOBAL_CFLAGS += -DHTCLOG
 
 # Kernel
-BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.hardware=qcom user_debug=31 ehci-hcd.park=3 zcache androidboot.selinux=permissive
+BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.hardware=qcom user_debug=31 ehci-hcd.park=3 zcache
 BOARD_KERNEL_BASE := 0x00000000
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_KERNEL_SEPARATED_DT := true
@@ -159,6 +159,29 @@ BOARD_USE_CUSTOM_RECOVERY_FONT := \"roboto_23x41.h\"
 BOARD_USES_MMCUTILS := true
 TARGET_RECOVERY_FSTAB := device/htc/m8/rootdir/etc/fstab.qcom
 TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
+
+# SELinux
+include device/qcom/sepolicy/sepolicy.mk
+BOARD_SEPOLICY_DIRS += device/htc/m8/sepolicy
+
+BOARD_SEPOLICY_UNION += \
+    cir_fw_update.te \
+    device.te \
+    file_contexts \
+    file.te \
+    hcheck.te \
+    init.te \
+    kernel.te \
+    mediaserver.te \
+    mm-qcamerad.te \
+    mpdecision.te \
+    platform_app.te \
+    rmt_storage.te \
+    system_app.te \
+    tap2wake_dev.te \
+    thermal-engine.te \
+    ueventd.te \
+    vold.te
 
 # Vendor Init
 TARGET_UNIFIED_DEVICE := true
