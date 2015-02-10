@@ -17,4 +17,3 @@
 #
 
 echo "assert(run_program(\"/system/bin/makelinks.sh\") == 0);" >> updater-script
-echo "ifelse(is_substring(\"0P6B20000\", getprop(\"ro.boot.mid\")), run_program(\"/sbin/sh\", \"-c\", \"busybox sed -i \'s/ro.com.google.clientidbase=android-google/ro.com.google.clientidbase=android-verizon/g\' /system/build.prop\"));" >> updater-script
