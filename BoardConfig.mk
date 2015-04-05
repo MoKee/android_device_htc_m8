@@ -60,7 +60,7 @@ BOARD_KERNEL_PAGESIZE := 2048
 BOARD_KERNEL_SEPARATED_DT := true
 BOARD_MKBOOTIMG_ARGS := --kernel_offset 0x00008000 --ramdisk_offset 0x02008000 --tags_offset 0x01e00000
 BOARD_CUSTOM_BOOTIMG_MK := device/htc/m8/mkbootimg.mk
-TARGET_KERNEL_CONFIG := cm_m8_defconfig
+TARGET_KERNEL_CONFIG := mokee_m8_defconfig
 TARGET_KERNEL_SOURCE := kernel/htc/msm8974
 
 # QCOM hardware
@@ -198,4 +198,4 @@ TARGET_LIBINIT_DEFINES_FILE := device/htc/m8/init/init_m8.c
 TARGET_RELEASETOOLS_EXTENSIONS := device/htc/m8/releasetools
 
 # Hardware
-BOARD_HARDWARE_CLASS := device/htc/m8/cmhw
+BOARD_HARDWARE_CLASS := device/htc/m8/mkhw
