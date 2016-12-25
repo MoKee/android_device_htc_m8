@@ -103,6 +103,7 @@ void vendor_load_properties()
         property_set("ro.ril.gsm.to.lte.blind.redir", "0");
         property_set("ro.config.svlte1x", "true");
         property_set("ro.telephony.get_imsi_from_sim", "true");
+        property_set("ro.com.google.clientidbase", "android-verizon");
     } else if (bootmid == "0P6B70000") {
         /* m8spr (m8whl) */
         common_properties();
