@@ -18,11 +18,11 @@
 # Inherit from m8 device
 $(call inherit-product, device/htc/m8/device.mk)
 
-# Inherit some common Lineage stuff.
-$(call inherit-product, vendor/lineage/config/common_mini_phone.mk)
+# Inherit some common MK stuff.
+$(call inherit-product, vendor/mk/config/common_mini_phone.mk)
 
 # Device identifier. This must come after all inclusions.
-PRODUCT_NAME := lineage_m8
+PRODUCT_NAME := mk_m8
 PRODUCT_DEVICE := m8
 PRODUCT_BRAND := htc
 PRODUCT_MODEL := m8
